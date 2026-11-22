@@ -1,0 +1,57 @@
+:root { font-family: "Segoe UI", Arial, sans-serif; color: #233932; background: #f6f8f7; font-size: 16px; --green: #18775b; --orange: #ce7036; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #287cce; outline-offset: 4px; }
+.header { height: 76px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; background: white; border-bottom: 1px solid #dfe6e2; }
+.brand { font-size: 21px; font-weight: 700; text-decoration: none; color: #233932; display: flex; gap: 12px; align-items: center; }
+.brand-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #e7f1ec; }
+.location { font-size: 14px; color: #65746e; }
+.workspace { display: grid; grid-template-columns: 350px 1fr; height: calc(100dvh - 76px); min-height: 580px; }
+.sidebar { padding: 32px 28px 22px; overflow-y: auto; background: #fff; display: flex; flex-direction: column; }
+.eyebrow { font-size: 12px; letter-spacing: 2px; font-weight: 700; color: var(--green); margin: 0 0 14px; }
+h1 { font-size: 30px; letter-spacing: -1px; line-height: 1.2; margin: 0 0 14px; }
+.intro > p:last-child { color: #65746e; line-height: 1.65; font-size: 15px; margin: 0; }
+.summary { background: #eff5f2; padding: 18px; border-radius: 12px; margin: 26px 0; display: flex; gap: 14px; align-items: center; }
+.summary strong { font-size: 36px; line-height: 1; color: var(--green); }
+.summary span { font-size: 14px; line-height: 1.5; }
+#total-count { display: block; color: #65746e; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+legend { padding: 0; font-weight: 650; }
+.hint { color: #65746e; font-size: 14px; line-height: 1.5; margin: 8px 0 15px; }
+.filter-row { display: flex; gap: 10px; align-items: center; padding: 14px 0; cursor: pointer; }
+.dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+.wifi-on { background: var(--green); }
+.wifi-off { background: var(--orange); }
+.category-count { margin-left: auto; font-size: 14px; color: #65746e; }
+input[type="checkbox"] { width: 19px; height: 19px; accent-color: var(--green); cursor: pointer; flex-shrink: 0; }
+.cluster-option { border-top: 1px solid #e4eae7; margin-top: 14px; padding-top: 22px; }
+.cluster-label { display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-weight: 600; }
+.reset-button { width: 100%; border: 1px solid #cad9d1; background: white; color: #24614d; padding: 12px 8px; border-radius: 8px; font-size: 14px; margin: 10px 0; }
+.reset-button:hover { background: #eff5f2; }
+.status-box { font-size: 14px; line-height: 1.5; color: #65746e; }
+#retry { border: 0; border-radius: 6px; padding: 8px 14px; background: var(--green); color: white; }
+.sidebar-footer { margin-top: auto; padding-top: 26px; font-size: 13px; line-height: 1.8; color: #566a60; }
+.sidebar-footer span { color: #65746e; }
+.map-panel { position: relative; min-width: 0; }
+#map { width: 100%; height: 100%; background: #e4ece7; }
+.map-caption { position: absolute; z-index: 500; top: 18px; left: 18px; padding: 12px 16px; background: white; border-radius: 8px; box-shadow: 0 2px 12px #23393218; font-size: 14px; pointer-events: none; }
+.tile-warning { position: absolute; bottom: 30px; left: 16px; right: 16px; z-index: 500; background: #fff5df; color: #6e4917; padding: 12px; border-radius: 8px; font-size: 14px; }
+.kafe-icon { border: 2px solid white; border-radius: 50%; box-shadow: 0 1px 5px #0005; }
+.kafe-icon.wifi-on { background: var(--green); }
+.kafe-icon.wifi-off { background: var(--orange); }
+.kafe-popup h2 { margin: 0 0 8px; font-size: 18px; }
+.kafe-popup p { margin: 7px 0; font-size: 14px; line-height: 1.5; }
+.kafe-popup .popup-wifi { font-weight: 650; color: var(--green); }
+@media (max-width: 720px) {
+  .header { height: auto; min-height: 68px; padding: 14px 18px; gap: 12px; flex-wrap: wrap; }
+  .location { font-size: 13px; }
+  .workspace { display: flex; flex-direction: column; height: auto; min-height: 0; }
+  .sidebar { padding: 24px 20px; overflow: visible; }
+  h1 { font-size: 28px; } h1 br { display: none; }
+  .summary { margin: 20px 0; }
+  .sidebar-footer { display: none; }
+  .map-panel { height: 65dvh; min-height: 400px; }
+  .map-caption { font-size: 13px; max-width: calc(100% - 80px); }
+}

@@ -13,6 +13,9 @@ const fileTerras = path.join(__dirname, 'data', 'area_terras.geojson');
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+// Sajikan pustaka lokal agar frontend tidak bergantung pada CDN.
+app.use('/vendor/leaflet', express.static(path.join(__dirname, 'node_modules', 'leaflet', 'dist')));
+app.use('/vendor/markercluster', express.static(path.join(__dirname, 'node_modules', 'leaflet.markercluster', 'dist')));
 
 // ======================================
 // 1. GET DATA KAFE
